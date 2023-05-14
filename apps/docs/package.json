@@ -1,12 +1,12 @@
 {
-  "name": "web",
+  "name": "docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev -p 3002",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start -p 3002"
   },
   "dependencies": {
     "cookies-next": "^2.1.1",
@@ -14,7 +14,6 @@
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "store": "*",
     "ui": "*"
   },
   "devDependencies": {

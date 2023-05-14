@@ -3,6 +3,7 @@ import { Button } from "ui";
 import { consolelog } from "logger";
 import Link from "next/link";
 import useStore from "store";
+import { getCookie, setCookie } from "cookies-next";
 
 const API_HOST = process.env.NEXT_PUBLIC_API_HOST || "http://localhost:3001";
 
@@ -10,11 +11,14 @@ export default function Web() {
   const [name, setName] = useState<string>("");
   const [response, setResponse] = useState<{ message: string } | null>(null);
   const [error, setError] = useState<string | undefined>();
+  const increasePopulation = useStore((state) => state.increasePopulation);
   const bears = useStore((state) => state.bears);
 
   useEffect(() => {
     setResponse(null);
     setError(undefined);
+    console.log(getCookie("key"));
+    setCookie("key", 23);
   }, [name]);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -40,7 +44,8 @@ export default function Web() {
 
   return (
     <div>
-      <h1>Web {bears}</h1>
+      <h1>Docs {bears}</h1>
+      <button onClick={() => increasePopulation()}>+</button>
       <form onSubmit={onSubmit}>
         <label htmlFor="name">Name </label>
         <input
@@ -52,10 +57,9 @@ export default function Web() {
         ></input>
         <Button type="submit">Submit</Button>
       </form>
-      <Link href="/about">about</Link>
+      <a href="/">web</a>
       <br />
-      <Link href="/docs">docs</Link>
-
+      <a href="/about">about</a>
       {error && (
         <div>
           <h3>Error</h3>
