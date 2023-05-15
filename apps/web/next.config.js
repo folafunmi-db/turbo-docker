@@ -20,11 +20,11 @@ module.exports = {
       },
       {
         source: "/risk",
-        destination: `${_URL}/risk`,
+        destination: `${RISK_URL}/risk`,
       },
       {
         source: "/risk/:path*",
-        destination: `${_URL}/risk/:path*`,
+        destination: `${RISK_URL}/risk/:path*`,
       },
     ];
   },
