@@ -14,6 +14,8 @@ export default function About() {
   useEffect(() => {
     setResponse(null);
     setError(undefined);
+
+    //try setting cookies
     setCookie("key", 123);
   }, [name]);
 

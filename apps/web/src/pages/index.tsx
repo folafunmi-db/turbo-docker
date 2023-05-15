@@ -55,6 +55,8 @@ export default function Web() {
       <Link href="/about">about</Link>
       <br />
       <Link href="/docs">docs</Link>
+      <br />
+      <Link href="/risk">risk</Link>
 
       {error && (
         <div>

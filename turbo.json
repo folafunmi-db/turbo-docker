@@ -5,7 +5,7 @@
   "pipeline": {
     "build": {
       "outputs": ["dist/**", ".next/**", "!.next/cache/**", "public/dist/**"],
-      "dependsOn": ["^build", "$DOCS_URL"],
+      "dependsOn": ["^build", "$DOCS_URL", "$RISK_URL"],
       "env": ["NEXT_PUBLIC_API_HOST"]
     },
     "test": {

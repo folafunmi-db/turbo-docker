@@ -1,5 +1,5 @@
 const path = require("path");
-const { DOCS_URL } = process.env;
+const { DOCS_URL, RISK_URL } = process.env;
 
 module.exports = {
   reactStrictMode: true,
@@ -17,6 +17,14 @@ module.exports = {
       {
         source: "/docs/:path*",
         destination: `${DOCS_URL}/docs/:path*`,
+      },
+      {
+        source: "/risk",
+        destination: `${_URL}/risk`,
+      },
+      {
+        source: "/risk/:path*",
+        destination: `${_URL}/risk/:path*`,
       },
     ];
   },
